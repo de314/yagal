@@ -5,5 +5,7 @@ import Uniform from './Uniform'
 export default {
   Fittest,
   TournamentN,
+  Tournament2: TournamentN(2),
+  Tournament3: TournamentN(3),
   Uniform,
 }
