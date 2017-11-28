@@ -1,5 +1,4 @@
 import 'babel-polyfill'
-import _ from 'lodash'
 import { expect } from 'chai'
 import SELECT from '../../lib/select'
 
