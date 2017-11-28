@@ -1,16 +1,17 @@
 import _ from 'lodash'
 
 const Roulette = (population, r) => {
-  const totalFitness = _.sumBy(population, 'fitness')
+  const genes = population.genes
+  const totalFitness = _.sumBy(genes, 'fitness')
   let sum = 0
   let rFit = r.randInt(totalFitness)
-  for (let j = 0; j < population.length; j++) {
-    sum += population[j].fitness
+  for (let j = 0; j < genes.length; j++) {
+    sum += genes[j].fitness
     if (sum > rFit) {
-      return population[j]
+      return genes[j]
     }
   }
-  return _.last(population)
+  return _.last(genes)
 }
 
 export default Roulette

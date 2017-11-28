@@ -1,3 +1,3 @@
-const Uniform = (population, r) => population[r.randInt(population.length)]
+const Uniform = ({ genes }, r) => genes[r.randInt(genes.length)]
 
 export default Uniform
