@@ -1,0 +1,29 @@
+{
+  "name": "yagal",
+  "version": "1.0.0",
+  "description": "Yet Another Genetic Algorithm Library",
+  "main": "lib/index.js",
+  "scripts": {
+    "compile": "rimraf lib/ && babel ./src --out-dir lib/ --copy-files",
+    "test": "npm run compile && mocha --recursive --reporter spec --require babel-core/register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/de314/yagal"
+  },
+  "author": "David Esposito <desposi1@gmail.com> (https://github.com/de314)",
+  "license": "MIT",
+  "dependencies": {
+    "babel-polyfill": "6.26.0",
+    "lodash": "4.17.4",
+    "mersenne-twister": "1.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.0",
+    "babel-preset-env": "1.6.1",
+    "chai": "4.1.2",
+    "mocha": "4.0.1",
+    "rimraf": "2.6.2"
+  }
+}
