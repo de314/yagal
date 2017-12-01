@@ -1,6 +1,6 @@
 import 'babel-polyfill'
 import { expect } from 'chai'
-import EVOLVE from '../../lib/evolve'
+import EVOLVE from '../../src/evolve'
 
 const Identity = EVOLVE.Identity
 

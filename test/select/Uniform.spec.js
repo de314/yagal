@@ -2,7 +2,7 @@ import 'babel-polyfill'
 import _ from 'lodash'
 import { expect } from 'chai'
 import TestRandom from '../TestRandom'
-import SELECT from '../../lib/select'
+import SELECT from '../../src/select'
 
 const Uniform = SELECT.Uniform
 

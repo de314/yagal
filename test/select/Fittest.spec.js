@@ -1,6 +1,6 @@
 import 'babel-polyfill'
 import { expect } from 'chai'
-import SELECT from '../../lib/select'
+import SELECT from '../../src/select'
 
 const Fittest = SELECT.Fittest
 

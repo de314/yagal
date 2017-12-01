@@ -1,7 +1,7 @@
 import 'babel-polyfill'
 import { expect } from 'chai'
 import _ from 'lodash'
-import runCrossover from '../../lib/yagal/runCrossover'
+import runCrossover from '../../src/yagal/runCrossover'
 
 function TestYagal(opts) {
   _.assignIn(this, opts)

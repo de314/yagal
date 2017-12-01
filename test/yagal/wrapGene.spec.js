@@ -1,6 +1,6 @@
 import 'babel-polyfill'
 import { expect } from 'chai'
-import wrapGene from '../../lib/yagal/wrapGene'
+import wrapGene from '../../src/yagal/wrapGene'
 
 describe('Yaga::wrapGene', function() {
   it('should wrap', function() {

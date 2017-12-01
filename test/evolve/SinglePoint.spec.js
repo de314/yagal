@@ -1,7 +1,7 @@
 import 'babel-polyfill'
 import { expect } from 'chai'
 import TestRandom from '../TestRandom'
-import EVOLVE from '../../lib/evolve'
+import EVOLVE from '../../src/evolve'
 
 const SinglePoint = EVOLVE.SinglePoint
 

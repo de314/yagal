@@ -4,7 +4,7 @@ import _ from 'lodash'
 import sortComparators, {
   inverseComparator,
   naturalComparator,
-} from '../../lib/yagal/sortComparators'
+} from '../../src/yagal/sortComparators'
 
 const wrapGene = fitness => ({ fitness })
 

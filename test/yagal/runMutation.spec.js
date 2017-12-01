@@ -1,7 +1,7 @@
 import 'babel-polyfill'
 import { expect } from 'chai'
 import _ from 'lodash'
-import runMutation from '../../lib/yagal/runMutation'
+import runMutation from '../../src/yagal/runMutation'
 
 function TestYagal(opts) {
   _.assignIn(this, opts)

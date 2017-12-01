@@ -1,7 +1,7 @@
 import 'babel-polyfill'
 import { expect } from 'chai'
-import setupCrossover from '../../lib/yagal/setupCrossover'
-import Uniform from '../../lib/select/Uniform'
+import setupCrossover from '../../src/yagal/setupCrossover'
+import Uniform from '../../src/select/Uniform'
 
 const noop = () => {}
 const select = noop

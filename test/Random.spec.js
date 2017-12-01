@@ -1,6 +1,6 @@
 import 'babel-polyfill'
 import { expect } from 'chai'
-import Random from '../lib/Random'
+import Random from '../src/Random'
 
 describe('Random', function() {
   describe('doubles', function() {

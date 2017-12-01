@@ -1,6 +1,6 @@
 import 'babel-polyfill'
 import { expect } from 'chai'
-import setupMutation from '../../lib/yagal/setupMutation'
+import setupMutation from '../../src/yagal/setupMutation'
 
 const EMPTY = {
   probability: 0,

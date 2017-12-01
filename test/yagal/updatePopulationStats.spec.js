@@ -1,7 +1,7 @@
 import 'babel-polyfill'
 import { expect } from 'chai'
 import _ from 'lodash'
-import updatePopulationStats from '../../lib/yagal/updatePopulationStats'
+import updatePopulationStats from '../../src/yagal/updatePopulationStats'
 
 function TestYagal(opts) {
   _.assignIn(this, { optimizations: {} }, opts)

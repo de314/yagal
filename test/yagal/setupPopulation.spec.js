@@ -1,11 +1,11 @@
 import 'babel-polyfill'
 import { expect } from 'chai'
 import _ from 'lodash'
-import setupPopulation from '../../lib/yagal/setupPopulation'
+import setupPopulation from '../../src/yagal/setupPopulation'
 import {
   inverseComparator,
   naturalComparator,
-} from '../../lib/yagal/sortComparators'
+} from '../../src/yagal/sortComparators'
 
 function TestYagal() {}
 

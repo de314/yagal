@@ -5,9 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "compile": "rimraf lib/ && babel ./src --out-dir lib/ --copy-files",
-    "test":
-      "npm run compile && babel-node ./node_modules/.bin/isparta cover _mocha -- --recursive --reporter spec",
-    "oldTest": "npm run compile && mocha --recursive --reporter spec --require babel-core/register"
+    "test": "babel-node ./node_modules/.bin/isparta cover _mocha -- --recursive --reporter spec"
   },
   "repository": {
     "type": "git",
