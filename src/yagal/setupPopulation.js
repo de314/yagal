@@ -1,10 +1,5 @@
 import sortComparators from './sortComparators'
-
-const wrapGene = (gene, generation, fitFunc) => ({
-  gene,
-  born: generation,
-  fitness: fitFunc(gene),
-})
+import wrapGene from './wrapGene'
 
 const setupPopulation = function(initialPopulation, natural, fitFunc) {
   let population = {

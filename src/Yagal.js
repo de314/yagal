@@ -4,6 +4,8 @@ import updatePopulationStats from './yagal/updatePopulationStats'
 import setupPopulation from './yagal/setupPopulation'
 import setupMutation from './yagal/setupMutation'
 import runMutation from './yagal/runMutation'
+import setupCrossover from './yagal/setupCrossover'
+import runCrossover from './yagal/runCrossover'
 
 import Fittest from './select/Fittest'
 import Identity from './evolve/Identity'
@@ -19,7 +21,14 @@ const defaultOpts = {
   mutation: {
     probability: 0,
   },
-  crossover: {},
+  crossover: {
+    elitism: {
+      probability: 0,
+    },
+    steadyState: {
+      probability: 0,
+    },
+  },
 }
 
 function Yagal(opts) {
@@ -43,6 +52,7 @@ Yagal.prototype.run = function(initialPopulation) {
   )
 
   const mutation = this._setupMutation(this.mutation, initialPopulation.length)
+  const crossover = this._setupCrossover(this.crossover, initialPopulation.length)
 
   const { maxGenerations, maxDuration } = this
   let startTime = new Date().getTime()
@@ -50,13 +60,14 @@ Yagal.prototype.run = function(initialPopulation) {
   let generation = 0
 
   while (generation < maxGenerations && duration < maxDuration) {
-    // TODO: crossover
+    this._runCrossover(crossover, population, generation)
 
     this._runMutation(mutation, population)
 
     if (population.isDirty) {
       population.isDirty = false
       this._updatePopulationStats(population)
+      population.genes.sort(sortComparator)
     }
     duration = new Date().getTime() - startTime
   }
@@ -74,6 +85,8 @@ Yagal.prototype._setupPopulation = setupPopulation
 Yagal.prototype._updatePopulationStats = updatePopulationStats
 Yagal.prototype._setupMutation = setupMutation
 Yagal.prototype._runMutation = runMutation
+Yagal.prototype._setupCrossover = setupCrossover
+Yagal.prototype._runCrossover = runCrossover
 
 const naturalComparator = (geneA, geneB) => geneB.fitness - geneA.fitness
 const inverseComparator = (geneA, geneB) => geneA.fitness - geneB.fitness
