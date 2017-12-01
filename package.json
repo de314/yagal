@@ -1,6 +1,6 @@
 {
   "name": "yagal",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Yet Another Genetic Algorithm Library",
   "main": "lib/index.js",
   "scripts": {
