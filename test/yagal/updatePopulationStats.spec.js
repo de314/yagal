@@ -85,6 +85,25 @@ describe('Yagal.updatePopulationStats', function() {
     yagal._updatePopulationStats(population)
     expect(population).to.deep.equal(expected)
   })
+  it('should update with 0 total fitness', function() {
+    const yagal = new TestYagal({})
+    const population = {
+      genes: _.range(4).map(() => ({ fitness: 0 })),
+      fitness: {},
+    }
+    const expected = {
+      size: 4,
+      genes: _.range(4).map(() => ({ fitness: 0 })),
+      fitness: {
+        min: 0,
+        max: 0,
+        offset: 0,
+        offsetTotal: 0,
+      },
+    }
+    yagal._updatePopulationStats(population)
+    expect(population).to.deep.equal(expected)
+  })
   it('should update with diverse population', function() {
     const yagal = new TestYagal({})
     const population = {
