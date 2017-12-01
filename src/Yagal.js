@@ -23,7 +23,7 @@ const defaultOpts = {
   },
   crossover: {
     elitism: {
-      probability: 0,
+      probability: 1,
     },
     steadyState: {
       probability: 0,
