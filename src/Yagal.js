@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import Random from './Random'
+import Drand from 'drand'
 import updatePopulationStats from './yagal/updatePopulationStats'
 import setupPopulation from './yagal/setupPopulation'
 import setupMutation from './yagal/setupMutation'
@@ -34,7 +34,7 @@ const defaultOpts = {
 function Yagal(opts) {
   _.assignIn(this, defaultOpts, opts)
   if (_.isNil(this.r)) {
-    this.r = new Random(this.seed)
+    this.r = new Drand(this.seed)
   }
   if (!_.isFunction(this.fitFunc)) {
     throw new Error('fitFunc is a required fucntion')
@@ -48,7 +48,7 @@ Yagal.prototype.run = function(initialPopulation) {
   const { population, sortComparator } = this._setupPopulation(
     initialPopulation,
     this.natural,
-    this.fitFunc,
+    this.fitFunc
   )
 
   const mutation = this._setupMutation(this.mutation, initialPopulation.length)
@@ -87,8 +87,5 @@ Yagal.prototype._setupMutation = setupMutation
 Yagal.prototype._runMutation = runMutation
 Yagal.prototype._setupCrossover = setupCrossover
 Yagal.prototype._runCrossover = runCrossover
-
-const naturalComparator = (geneA, geneB) => geneB.fitness - geneA.fitness
-const inverseComparator = (geneA, geneB) => geneA.fitness - geneB.fitness
 
 export default Yagal
