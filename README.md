@@ -1,8 +1,10 @@
 # yagal
 
+[![NPM package](https://nodei.co/npm/yagal.png)](https://www.npmjs.com/package/yagal)
+
 [![Build Status](https://travis-ci.org/de314/yagal.svg?branch=master)](https://travis-ci.org/de314/yagal)
 [![Coverage Status](https://coveralls.io/repos/github/de314/yagal/badge.svg?branch=master)](https://coveralls.io/github/de314/yagal?branch=master)
-[![Try yagal on RunKit](https://badge.runkitcdn.com/yagal.svg](https://npm.runkit.com/yagal)
+[![Try Yagal on RunKit](https://badge.runkitcdn.com/Yagal.svg)](https://npm.runkit.com/Yagal)
 
 Yet Another Genetic Algorithm Library
 
@@ -13,6 +15,8 @@ Yet Another Genetic Algorithm Library
 ## Usage
 
 ## Examples
+
+[![Try Yagal on RunKit](https://badge.runkitcdn.com/Yagal.svg)](https://npm.runkit.com/Yagal)
 
 ### All 1's via Mutation
 

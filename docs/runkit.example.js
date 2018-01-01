@@ -1,3 +1,9 @@
+/**
+ * The following example generates a population of genes represented by arrays
+ * of 0's and 1's. The fitness is calculated by the number of 1 bits. The
+ * mutation function will randomly flip bits.
+ */
+
 var _ = require('lodash')
 var moment = require('moment')
 
