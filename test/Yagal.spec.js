@@ -4,7 +4,6 @@ import _ from 'lodash'
 import Drand from 'drand'
 import Yagal from '../src/Yagal'
 import SELECT from '../src/select'
-import EVOLVE from '../src/evolve'
 
 describe('Yagal Simulations', function() {
   it("should satisfy all 1's via mutation", function() {
