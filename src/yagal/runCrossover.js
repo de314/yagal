@@ -10,7 +10,10 @@ export default function(crossover, population, generation) {
     const newGenes = genes.slice(0, elitism.count)
     let parents, children, maxToAdd, i
     while (newGenes.length < genes.length - steadyState.count) {
-      parents = crossover.select(genes, this.r)
+      parents = crossover.select(population, this.r)
+      if (!_.isArray(parents)) {
+        parents = [parents]
+      }
       children = crossover.evolve(parents, this.r)
       if (_.isArray(children)) {
         maxToAdd = -newGenes.length
@@ -25,9 +28,10 @@ export default function(crossover, population, generation) {
     }
 
     genes = genes.slice(elitism.count)
+    const remainingPop = _.assignIn({}, population, { genes })
     let selected
     _.range(steadyState.count).map(() => {
-      selected = steadyState.select(genes, this.r)
+      selected = steadyState.select(remainingPop, this.r)
       newGenes.push(selected)
       genes.splice(genes.findIndex(i => i === selected), 1)
     })

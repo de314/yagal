@@ -7,8 +7,8 @@ const Uniform = (parents, r) => {
   if (count > 1 && !_.isArray(pGenes[0])) {
     throw new Error(
       `The built-in SinglePoint evolution can only operate on arrays, but found "${typeof pGenes[0]}" ex: ${JSON.stringify(
-        pGenes[0],
-      )}`,
+        pGenes[0]
+      )}`
     )
   }
   if (count > 1) {

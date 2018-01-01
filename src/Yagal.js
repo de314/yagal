@@ -35,6 +35,7 @@ function Yagal(opts) {
   _.assignIn(this, defaultOpts, opts)
   if (_.isNil(this.r)) {
     this.r = new Drand(this.seed)
+    // TODO: instance per run
   }
   if (!_.isFunction(this.fitFunc)) {
     throw new Error('fitFunc is a required fucntion')
