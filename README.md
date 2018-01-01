@@ -4,7 +4,7 @@
 
 [![Build Status](https://travis-ci.org/de314/yagal.svg?branch=master)](https://travis-ci.org/de314/yagal)
 [![Coverage Status](https://coveralls.io/repos/github/de314/yagal/badge.svg?branch=master)](https://coveralls.io/github/de314/yagal?branch=master)
-[![Try Yagal on RunKit](https://badge.runkitcdn.com/Yagal.svg)](https://npm.runkit.com/yagal)
+[![dependencies Status](https://david-dm.org/de314/generator-create-npm-package/status.svg)](https://david-dm.org/de314/generator-create-npm-package)
 
 Yet Another Genetic Algorithm Library
 
