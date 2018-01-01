@@ -45,14 +45,14 @@ Yagal.prototype.run = function(initialPopulation) {
   if (!_.isArray(initialPopulation) || initialPopulation.length < 1) {
     throw new Error('Population is required')
   }
-  const { population, sortComparator } = this._setupPopulation(
+  const { population, sortComparator } = this.setupPopulation(
     initialPopulation,
     this.natural,
     this.fitFunc
   )
 
-  const mutation = this._setupMutation(this.mutation, initialPopulation.length)
-  const crossover = this._setupCrossover(this.crossover, initialPopulation.length)
+  const mutation = this.setupMutation(this.mutation, initialPopulation.length)
+  const crossover = this.setupCrossover(this.crossover, initialPopulation.length)
 
   const { maxGenerations, maxDuration } = this
   let startTime = new Date().getTime()
@@ -60,16 +60,17 @@ Yagal.prototype.run = function(initialPopulation) {
   let generation = 0
 
   while (generation < maxGenerations && duration < maxDuration) {
-    this._runCrossover(crossover, population, generation)
+    this.runCrossover(crossover, population, generation)
 
-    this._runMutation(mutation, population)
+    this.runMutation(mutation, population)
 
     if (population.isDirty) {
       population.isDirty = false
-      this._updatePopulationStats(population)
+      this.updatePopulationStats(population)
       population.genes.sort(sortComparator)
     }
     duration = new Date().getTime() - startTime
+    generation++
   }
 
   return {
@@ -81,11 +82,11 @@ Yagal.prototype.run = function(initialPopulation) {
   }
 }
 
-Yagal.prototype._setupPopulation = setupPopulation
-Yagal.prototype._updatePopulationStats = updatePopulationStats
-Yagal.prototype._setupMutation = setupMutation
-Yagal.prototype._runMutation = runMutation
-Yagal.prototype._setupCrossover = setupCrossover
-Yagal.prototype._runCrossover = runCrossover
+Yagal.prototype.setupPopulation = setupPopulation
+Yagal.prototype.updatePopulationStats = updatePopulationStats
+Yagal.prototype.setupMutation = setupMutation
+Yagal.prototype.runMutation = runMutation
+Yagal.prototype.setupCrossover = setupCrossover
+Yagal.prototype.runCrossover = runCrossover
 
 export default Yagal

@@ -13,8 +13,8 @@ const testMutation = (count, selected) => ({
   count,
   select: () => selected,
   evolve: g => {
-    selected.g = g
     selected.evolved++
+    return g
   },
 })
 
@@ -42,7 +42,7 @@ describe('Yagal._runMutation', function() {
       genes: _.range(4),
     }
     expect(selected.evolved).to.equal(1)
-    expect(selected.g).to.equal(gene)
+    expect(selected.gene).to.equal(gene)
     expect(population).to.deep.equal(expected)
   })
   it('should run and update fitness', function() {
@@ -58,7 +58,7 @@ describe('Yagal._runMutation', function() {
       isDirty: true,
     }
     expect(selected.evolved).to.equal(3)
-    expect(selected.g).to.equal(gene)
+    expect(selected.gene).to.equal(gene)
     expect(population).to.deep.equal(expected)
   })
 })
